@@ -8,11 +8,11 @@
 
 :root {
   --color-primary: #007acc;
-  --color-primary-dark: #66d4a2;
+  --color-primary-dark: #007acc;
   --color-secondary: #00bfa5;
   --color-background: #f4f9ff;
-  --color-text: #333333;
-  --color-text-light: #5cd49e;
+  --color-text: #000000;
+  --color-text-light: #007acc;
   --color-accent: #ff6f61;
   --font-family: 'Roboto', sans-serif;
 }
@@ -281,7 +281,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Parallax suave */
+  background-attachment: fixed;
   min-height: 100vh;
   color: white;
 }
@@ -295,9 +295,9 @@ body {
   padding: 20px;
 }
 
-/* Caixa central com efeito translúcido */
+
 .hero-content {
-  background-color: rgba(0, 0, 0, 0.6); /* escuro com transparência */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 12px;
   max-width: 500px;
