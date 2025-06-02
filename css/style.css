@@ -8,11 +8,11 @@
 
 :root {
   --color-primary: #007acc;
-  --color-primary-dark: #005a99;
+  --color-primary-dark: #66d4a2;
   --color-secondary: #00bfa5;
   --color-background: #f4f9ff;
   --color-text: #333333;
-  --color-text-light: #555555;
+  --color-text-light: #5cd49e;
   --color-accent: #ff6f61;
   --font-family: 'Roboto', sans-serif;
 }
@@ -271,4 +271,100 @@ select:focus {
 }
 #alert-form {
   padding-bottom: 200px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+  background-image: url('../imgs/'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax suave */
+  min-height: 100vh;
+  color: white;
+}
+
+/* Seção central */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Caixa central com efeito translúcido */
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6); /* escuro com transparência */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+button {
+  background-color: #00aaff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: #0077aa;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+#hero {
+  background-image: url('/imgs/papel-de-parede.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background-color: #00aaff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #0077aa;
 }
