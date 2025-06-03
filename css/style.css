@@ -25,6 +25,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
 }
 
 header {
@@ -163,8 +164,6 @@ main {
   border-radius: 8px;
   object-fit: cover;
 }
-
-/* Conteúdo seções */
 .content-section {
   margin-bottom: 3rem;
 }
@@ -238,9 +237,10 @@ footer {
 
 @media (max-width: 400px) {
   .hero-content h1 {
-    font-size: var(--font-family)
+    font-size: 1.5rem;
+  }
 }
-}
+
 .hero-section {
   overflow: visible;
   position: relative;
@@ -285,8 +285,6 @@ body {
   min-height: 100vh;
   color: white;
 }
-
-/* Seção central */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -327,7 +325,7 @@ body {
   font-family: sans-serif;
 }
 #hero {
-  background-image: url('/imgs/papel-de-parede.png');
+  background-image: url('/imgs/wallpaper.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -368,3 +366,12 @@ button {
 button:hover {
   background-color: #0077aa;
 }
+
+.hero-content h1 {
+  color: #16c8f9;
+}
+
+.hero-content p {
+  color: #16c8f9;
+}
+
