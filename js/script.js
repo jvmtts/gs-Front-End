@@ -1,40 +1,52 @@
 const form = document.getElementById('alert-form');
-const message = document.querySelector('.form-message');
+const requiredFields = form.querySelectorAll('input[required], select[required]');
+const formMessage = document.querySelector('.form-message');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    const email = form.email.value.trim();
-    const estado = form.estado.value;
+    let valid = true;
+    formMessage.textContent = '';
+    formMessage.style.color = 'red';  // Cor padrão para erro
 
-    if (!email || !estado) {
-        message.textContent = 'Por favor, preencha todos os campos.';
-        message.style.color = 'red';
+    requiredFields.forEach(field => {
+        if (field.value.trim() === '') {
+            valid = false;
+            field.style.border = '2px solid red';
+        } else {
+            field.style.border = '2px solid var(--color-primary)';
+        }
+    });
+
+    if (!valid) {
+        formMessage.textContent = 'Por favor, preencha todos os campos obrigatórios.';
     } else {
-        message.textContent = 'Obrigado! Você receberá nossos alertas em breve.';
-        message.style.color = 'green';
+        formMessage.textContent = 'Formulário enviado com sucesso!';
+        formMessage.style.color = 'green';
         form.reset();
+
+        // Resetar bordas após envio
+        requiredFields.forEach(field => {
+            field.style.border = '1px solid #ccc';
+        });
     }
 });
-    const navbar = document.querySelector('.nav-links');
-    const hamburger = document.createElement('div');
-    hamburger.classList.add('hamburger');
-    hamburger.innerHTML = '&#9776;';
-    document.querySelector('.navbar').appendChild(hamburger);
 
-    hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
+// Menu hamburguer
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
 
-    function toggleMenuDisplay() {
-  if (window.innerWidth <= 768) {
-    hamburger.style.display = 'block';
-    navbar.style.display = navbar.classList.contains('active') ? 'block' : 'none';
-  } else {
-    hamburger.style.display = 'none';
-    navbar.style.display = 'flex';
-    navbar.classList.remove('active');
-  }
-}
-    toggleMenuDisplay();
-    window.addEventListener('resize', toggleMenuDisplay);
+const colorButtons = document.querySelectorAll('.color-theme');
+
+colorButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    document.body.style.backgroundColor = button.dataset.color;
+  });
+});
+document.body.style.backgroundColor = '#333333';
+document.body.classList.add('dark');
+

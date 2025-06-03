@@ -4,26 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FloodGuard Tech - Monitoramento Inteligente e Alerta Precoce</title>
-  <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <header>
-  <nav class="navbar">
-    <div class="logo">FloodGuard Tech</div>
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Início</a></li>
-      <li><a href="#problema">O Problema</a></li>
-      <li><a href="#tecnologias">Tecnologias</a></li>
-      <li><a href="#objetivos">Objetivos</a></li>
-      <li><a href="#publico">Público-Alvo</a></li>
-      <li><a href="#beneficios">Benefícios</a></li>
-      <li><a href="#ajuda">Como Ajuda</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <div class="logo">FloodGuard Tech</div>
+  <div class="hamburger">☰</div>
+  <ul class="nav-links">
+    <li><a href="#hero" class="active">Início</a></li>
+    <li><a href="#problema">O Problema</a></li>
+    <li><a href="#tecnologias">Tecnologias</a></li>
+    <li><a href="#objetivos">Objetivos</a></li>
+    <li><a href="#publico">Público-Alvo</a></li>
+    <li><a href="#beneficios">Benefícios</a></li>
+    <li><a href="#ajuda">Como Ajuda</a></li>
+  </ul>
+</nav>
 </header>
-
+<div class="color-options">
+  <button class="color-theme" data-color="#fefefe" style="background-color: #fefefe; width: 20px; height: 20px; border-radius: 50%;"></button>
+  <button class="color-theme" data-color="#333333" style="background-color: #333333; width: 20px; height: 20px; border-radius: 50%;"></button>
+  <button class="color-theme" data-color="#808080" style="background-color: #808080; width: 20px; height: 20px; border-radius: 50%;"></button>
+</div>
 <main>
   <section id="hero" class="hero-section">
     <div class="hero-content">
@@ -187,7 +191,18 @@
     message.textContent = 'Obrigado! Você receberá nossos alertas em breve.';
     form.reset();
   });
-</script>
+  document.addEventListener('DOMContentLoaded', function() {
+   const colorButtons = document.querySelectorAll('.color-theme');
 
+colorButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    document.body.style.backgroundColor = button.dataset.color;
+  });
+});
+  });
+
+
+</script>
+<script src="js/script.js"></script>
 </body>
 </html>
