@@ -1,3 +1,4 @@
+// Validação de formulário
 const form = document.getElementById('alert-form');
 const requiredFields = form.querySelectorAll('input[required], select[required]');
 const formMessage = document.querySelector('.form-message');
@@ -7,7 +8,7 @@ form.addEventListener('submit', function(event) {
 
     let valid = true;
     formMessage.textContent = '';
-    formMessage.style.color = 'red';  // Cor padrão para erro
+    formMessage.style.color = 'red';
 
     requiredFields.forEach(field => {
         if (field.value.trim() === '') {
@@ -24,8 +25,6 @@ form.addEventListener('submit', function(event) {
         formMessage.textContent = 'Formulário enviado com sucesso!';
         formMessage.style.color = 'green';
         form.reset();
-
-        // Resetar bordas após envio
         requiredFields.forEach(field => {
             field.style.border = '1px solid #ccc';
         });
@@ -36,10 +35,12 @@ form.addEventListener('submit', function(event) {
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
+
 hamburger.addEventListener('click', () => {
+hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
     navLinks.classList.toggle('active');
 });
-
+// Validação de formulário
 const colorButtons = document.querySelectorAll('.color-theme');
 
 colorButtons.forEach(button => {
