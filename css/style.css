@@ -355,22 +355,44 @@ input, select, button {
   border-radius: 8px;
   border: none;
 }
-
 button {
   background-color: #00aaff;
   color: white;
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 button:hover {
   background-color: #0077aa;
 }
-
 .hero-content h1 {
   color: #16c8f9;
 }
-
 .hero-content p {
   color: #16c8f9;
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.nav-links.active {
+  display: block;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+}
+.form-message {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
 }
